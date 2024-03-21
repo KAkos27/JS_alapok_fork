@@ -12,25 +12,25 @@ window.addEventListener("load", function () {
 
 function elemekElerese1() {
   /**Ide jön az első feladat */
-  const ELEM = document.querySelectorAll("section h2")[0];
-  console.log("1. Feladat: ", ELEM.innerHTML);
+  const ELEM = $("section h2").eq(0);
+  console.log("1. Feladat: ", ELEM.html());
 }
 
 function elemekElerese2() {
   /**Ide jön az 2.  feladat */
-  const ELEM = document.getElementById("ide");
-  return (ELEM.innerHTML = `<p>Jó reggelt!</p>`);
+  const ELEM = $("#ide");
+  return ELEM.html(`<p>Jóóó reggelt!</p>`);
 }
 
 function elemekElerese3() {
   /**Ide jön az 3. feladat */
-  const ELEM = document.getElementsByClassName("ide")[0];
-  return (ELEM.innerHTML = `<p>Jó reggelt!</p>`);
+  const ELEM = $(".ide").eq(0);
+  return ELEM.html(`<p>Nagyon jó reggelt!</p>`);
 }
 
 function elemekElerese4() {
   /**Ide jön az 4. feladat */
-  const ELEM = document.getElementsByClassName("lista")[0];
+  const ELEM = $(".lista").eq(0);
 
   let txt = "<ul>";
   for (let i = 0; i < 5; i++) {
@@ -39,25 +39,23 @@ function elemekElerese4() {
   }
   txt += `</ul>`;
 
-  return (ELEM.innerHTML = txt);
+  return ELEM.html(txt);
 }
 
 function elemekFormazasa1() {
   /**Ide jön az 5. feladat */
-  const ELEM = document.getElementsByClassName("lista")[0];
-  return ELEM.classList.add("formazott");
+  const ELEM = $(".lista").eq(0);
+  return ELEM.addClass("formazott");
 }
 
 function esemenyKezeles1() {
   /**Ide jön az 6. feladat */
-  const ListaELEM = document.getElementsByClassName("lista")[0];
-  const KattELEM = document.getElementsByClassName("kattintasutan")[0];
+  const ListaELEM = $(".lista").eq(0);
+  const KattELEM = $(".kattintasutan").eq(0);
 
-  function KattUtan() {
-    KattELEM.innerHTML = ListaELEM.innerHTML;
-  }
-
-  return ListaELEM.addEventListener("click", KattUtan);
+  return ListaELEM.on("click", () => {
+    KattELEM.html() = ListaELEM.html();
+  });
 }
 
 function esemenyKezeles2() {
